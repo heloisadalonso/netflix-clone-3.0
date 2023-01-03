@@ -127,10 +127,11 @@ body{
     overflow: hidden;
 }
 
-.pre-btn, .next-btn{
+.pre-btn,
+.next-btn{
     position: absolute;
     height: 200px;
-    top:50px;
+    top:70%;
     transform: translateY(-50%);
     width: 2.5vw;
     background: #181818;
@@ -139,7 +140,8 @@ body{
     opacity: 0.5;
 }
 
-.pre-btn:hover, .next-btn:hover{
+.pre-btn:hover,
+ .next-btn:hover{
     opacity: 1;
 }
 
@@ -151,8 +153,9 @@ body{
     right: -2.5vw;
 }
 
-.pre-btn img, .next-btn img{
-    width: 20px;
-    height: 20px;
-   object-fit: contain;
+.pre-btn img,
+.next-btn img{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }

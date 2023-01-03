@@ -21,19 +21,23 @@ const fetchMoviesListByGenres = (id, genres) =>{
     .catch(err => console.log(err))
 }
 
-const mains = document.querySelector(".main")
-const makeCategoryElement = (category, data) =>{
-    mains.innerHTML += `
-    <div class="movie-list">
-        <button class="pre-btn">
-            <img src="img/prev.png" alt="botão de voltar">
-        </button>
-        <h1 class="movie-category">${category.replace("_", " ")}</h1>
-        <div class="movie-container" id ="${category}"></div>
-    <button class="next-btn">
-        <img src="img/next.png" alt="botão de avançar">
-    </button>
-    </div>`
+const main = document.querySelector(".main")
+    const makeCategoryElement = (category, data)=>{
+        main.innerHTML += `
+        <div class="movie-list">
+          <button class="pre-btn">
+            <img src="img/prev.png" alt="previous button">
+          </button>
+          <h1 class="movie-category">${category.replace("_", " ")}</h1>
+          
+          <div class="movie-container" id="${category}">
+          </div>
+          <button class="next-btn">
+            <img src="img/next.png" alt="next button">
+          </button>
+        </div>
+        
+        `
     makeCards(category, data)
 }
  const makeCards = (id, data) =>{
@@ -58,4 +62,3 @@ const makeCategoryElement = (category, data) =>{
         }
     })
  }
- 
