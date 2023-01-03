@@ -1,2 +1,2 @@
-# netflix-clone-3.0
+# netflix-clone
  
