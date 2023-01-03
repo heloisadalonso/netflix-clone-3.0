@@ -30,7 +30,6 @@ const makeCategoryElement = (category, data) =>{
         </button>
         <h1 class="movie-category">${category.replace("_", " ")}</h1>
         <div class="movie-container" id ="${category}"></div>
-    </div>
     <button class="next-btn">
         <img src="img/next.png" alt="botão de avançar">
     </button>
@@ -38,18 +37,25 @@ const makeCategoryElement = (category, data) =>{
     makeCards(category, data)
 }
  const makeCards = (id, data) =>{
-    const movieContainer = document.querySelector(id)
+    const movieContainer = document.getElementById(id)
     data.forEach((item,i) =>{
-        if(item.backdrop_path = null){
+        if(item.backdrop_path == null){
             item.backdrop_path = item.poster_path;
-            if(item.backdrop_path = null){
+            if(item.backdrop_path == null){
               return  
             }
         }
         movieContainer.innerHTML += `
         <div class="movie">
-            <img src="${img_url}${item.backdrop_path}" alt="poster da série The Witcher">
+            <img src="${img_url}${item.backdrop_path}" alt="poster">
             <p class="movie-title">${item.title}</p>
         </div>`
+
+        if(i == data.length -1){
+            setTimeout(()=>{
+                setupScrooling()
+            },100)
+        }
     })
  }
+ 
